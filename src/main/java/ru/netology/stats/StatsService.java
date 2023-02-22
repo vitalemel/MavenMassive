@@ -26,37 +26,39 @@ public class StatsService {
         }
         return maxMonth + 1;
     }
+
     public long allMonthSum(long[] sales) {
 
-         long result = 0;
+        long result = 0;
         for (long sale : sales) {
-            result  += sale;
+            result += sale;
         }
         return result;
     }
-    public long average(long[] sales){
 
-        return allMonthSum(sales)/sales.length;
+    public long average(long[] sales) {
+
+        return allMonthSum(sales) / sales.length;
     }
 
 
-    public  int saleBellowAverage(long[]sales){
-        int counter =0;
-        for(long sale: sales){
-            if (sale < average(sales)){
+    public int saleBellowAverage(long[] sales) {
+        int counter = 0;
+        for (long sale : sales) {
+            if (sale < average(sales)) {
                 counter++;
             }
         }
-        return  counter;
+        return counter;
     }
 
-    public  int saleHigherAverage(long[]sales){
-        int counter =0;
-        for(long sale: sales){
-            if (sale > average(sales)){
+    public int saleHigherAverage(long[] sales) {
+        int counter = 0;
+        for (long sale : sales) {
+            if (sale > average(sales)) {
                 counter++;
             }
         }
-        return  counter;
+        return counter;
     }
 }

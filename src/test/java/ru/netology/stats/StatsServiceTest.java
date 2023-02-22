@@ -3,6 +3,7 @@ package ru.netology.stats;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
+
 public class StatsServiceTest {
 
 
@@ -15,6 +16,7 @@ public class StatsServiceTest {
 
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
+
     @Test
     public void maxSalesMonth() {
         StatsService service = new StatsService();
@@ -24,42 +26,45 @@ public class StatsServiceTest {
 
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
+
     @Test
     public void TestSum() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expectedSum= 180;
+        long expectedSum = 180;
         long actualSum = service.allMonthSum(sales);
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
+
     @Test
-    public void  ShouldAverage(){
+    public void ShouldAverage() {
 
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expectedAverage= 15;
-        long actualAverage= service.average(sales);
-         Assertions.assertEquals(expectedAverage,actualAverage);
+        long expectedAverage = 15;
+        long actualAverage = service.average(sales);
+        Assertions.assertEquals(expectedAverage, actualAverage);
     }
 
     @Test
-    public void  ShouldBellowAverage(){
+    public void ShouldBellowAverage() {
 
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected= 5;
-        long actual= service.saleBellowAverage(sales);
-        Assertions.assertEquals(expected,actual);
+        long expected = 5;
+        long actual = service.saleBellowAverage(sales);
+        Assertions.assertEquals(expected, actual);
     }
+
     @Test
-    public void  ShouldHigherAverage(){
+    public void ShouldHigherAverage() {
 
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expected= 5;
-        long actual= service.saleHigherAverage(sales);
-        Assertions.assertEquals(expected,actual);
+        long expected = 5;
+        long actual = service.saleHigherAverage(sales);
+        Assertions.assertEquals(expected, actual);
     }
 
 }
